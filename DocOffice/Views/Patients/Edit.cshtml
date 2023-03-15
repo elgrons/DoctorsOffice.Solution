@@ -15,6 +15,9 @@
     @Html.LabelFor(model => model.PatientName)
     @Html.EditorFor(model => model.PatientName)
 
+    @Html.LabelFor(model => model.PatientBirthday, "Patient Birthday")
+    @Html.EditorFor(model => model.PatientBirthday)
+
     <input type="submit" value="Save" />
 }
 
