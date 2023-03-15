@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model DocOffice.Models.Patient
+
+<h4>Add a new patient</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.PatientName, "Patient Name:")
+    @Html.TextBoxFor(model => model.PatientName)
+
+    @Html.LabelFor(model => model.PatientName, "Patient Birthday:")
+    @Html.TextBoxFor(model => model.PatientBirthday, new { @class = "form-control", type = "date", style = "width: auto;"} )
+
+    <input type="submit" value="Add new patient"/>
+}
+<p>@Html.ActionLink("Show all patients", "Index")</p>

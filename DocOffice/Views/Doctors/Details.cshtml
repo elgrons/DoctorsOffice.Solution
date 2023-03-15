@@ -1,0 +1,38 @@
+@{
+  Layout = "_Layout";
+}
+
+@using DocOffice.Models
+@model DocOffice.Models.Doctor
+
+<h2>Doctor Deets</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.DoctorName): @Html.DisplayFor(model => model.DoctorName)</h3>
+
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This doctor does not belong to any patients</p>
+}
+else
+{
+  <h4>Patients that see this doctor:</h4>
+  <ul>
+  @foreach(DoctorPatient join in Model.JoinEntities)
+  {
+    <li>@join.Patient.PatientName</li>
+    @using (Html.BeginForm("DeleteJoin", "Doctors"))
+    {
+      @Html.Hidden("joinId", @join.DoctorPatientId)
+      <input type="submit" value="Delete"/>
+    }
+  }
+  </ul>
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
+
+<p>@Html.ActionLink("Add a Patient", "AddPatient", new { id = Model.DoctorId })</p>
+
+<p>@Html.ActionLink("Edit Doctor", "Edit", new { id = Model.DoctorId })</p>
+
+<p>@Html.ActionLink("Delete Doctor", "Delete", new { id = Model.DoctorId })</p>

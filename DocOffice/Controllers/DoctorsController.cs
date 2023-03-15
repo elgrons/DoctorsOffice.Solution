@@ -22,6 +22,7 @@ namespace DocOffice.Controllers
 
     public ActionResult Details(int id)
     {
+      ViewBag.PatientId = new SelectList(_db.Patients, "PatientId", "PatientName");
       Doctor thisDoctor = _db.Doctors
           .Include(doctor => doctor.JoinEntities)
           .ThenInclude(join => join.Patient)
