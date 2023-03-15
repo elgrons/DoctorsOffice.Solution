@@ -1,3 +1,38 @@
 @{
   Layout = "_Layout";
 }
+@using DocOffice.Models;
+
+<h1>Welcome to the Doctor's Office</h1>
+
+<hr>
+
+<h4>Doctors</h4>
+@if (Model["doctors"].Length == 0)
+{
+  <p>No doctors have been added yet.</p>
+} 
+<ul>
+  @foreach (Doctor doc in Model["doctors"])
+  {
+    <li>@Html.ActionLink(@doc.DoctorName, "Details", "Doctors", new { id = @doc.DoctorId})</li>
+  }
+</ul>
+
+<h4>Patients</h4>
+@if (Model["patients"].Length == 0)
+{
+  <p>No patients have been added.</p>
+} 
+<ul>
+  @foreach (Patient patient in Model["patients"])
+  {
+    <li>@Html.ActionLink(@patient.PatientName, "Details", "Patients", new { id = @patient.PatientId})</li>
+  }
+</ul>
+
+<hr>
+
+<p>@Html.ActionLink("Manage patients", "Index", "Patients")</p> 
+
+<p>@Html.ActionLink("Manage doctors", "Index", "Doctors")</p>

@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+
+@model DocOffice.Models.Doctor
+
+<h4>Add a new doctor</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.DoctorName)
+    @Html.TextBoxFor(model => model.DoctorName)
+
+    @Html.LabelFor(model => model.DoctorTitle)
+    @Html.TextBoxFor(model => model.DoctorTitle)
+
+    <input type="submit" value="Add new doctor" class="btn btn-primary" />
+}
+
+<p>@Html.ValidationMessageFor(model => model.DoctorId, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+
+<p>@Html.ValidationMessageFor(model => model.DoctorName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+
+<p>@Html.ActionLink("Show all doctors", "Index")</p>
+
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
