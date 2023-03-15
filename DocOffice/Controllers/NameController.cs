@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
-using ProjectName.Models;
+using DocOffice.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ProjectName.Controllers
+namespace DocOffice.Controllers
 {
   public class ClassNameController : Controller
   {

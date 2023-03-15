@@ -1,4 +1,4 @@
-namespace ProjectName.Models
+namespace DocOffice.Models
 {
   public static class DBConfiguration
   {

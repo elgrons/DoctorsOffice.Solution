@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using ProjectName.Models;
+using DocOffice.Models;
 
-namespace ProjectName
+namespace DocOffice
 {
   class Program
   {
@@ -13,7 +13,7 @@ namespace ProjectName
 
       builder.Services.AddControllersWithViews();
 
-      builder.Services.AddDbContext<ProjectNameContext>(
+      builder.Services.AddDbContext<DocOfficeContext>(
                         dbContextOptions => dbContextOptions
                           .UseMySql(
                             builder.Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings:DefaultConnection"]
