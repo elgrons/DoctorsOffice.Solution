@@ -93,13 +93,27 @@ namespace DocOffice.Controllers
       return RedirectToAction("Index");
     }
 
-    [HttpPost]
-    public ActionResult DeleteJoin(int joinId)
-    {
-      DoctorPatient joinEntry = _db.DoctorPatients.FirstOrDefault(entry => entry.DoctorPatientId == joinId);
-      _db.DoctorPatients.Remove(joinEntry);
-      _db.SaveChanges();
-      return RedirectToAction("Index");
-    }
+      [HttpPost]
+      public ActionResult DeleteJoin(int joinId)
+      {
+        DoctorPatient joinEntry = _db.DoctorPatients.FirstOrDefault(entry => entry.DoctorPatientId == joinId);
+        _db.DoctorPatients.Remove(joinEntry);
+        _db.SaveChanges();
+        return RedirectToAction("Index");
+      }
+
+      // public static void OrderByBday()
+      // {
+      //   Patient[] patients = { new Patient { Birthdate= },
+      //                 new Patient { Birthdate=4 },
+      //                 new Patient {  Birthdate=1 } };
+
+      //   IEnumerable<Patient> query = patients.OrderBy(patient => patient.Birthdate);
+
+      //   foreach (Patient patient in query)
+      //   {
+      //       Console.WriteLine("{0} - {1}", patient.Birthdate);
+      //   }
+      // }
     }
   }

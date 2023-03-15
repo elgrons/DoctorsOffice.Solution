@@ -8,12 +8,9 @@
 
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.DoctorName)
-    @Html.TextBoxFor(model => model.DoctorName)
-
-    @Html.LabelFor(model => model.DoctorTitle)
-    @Html.TextBoxFor(model => model.DoctorTitle)
-
+    <p>Doctor Name: @Html.TextBoxFor(model => model.DoctorName)</p>
+    <p>Doctor Title: @Html.TextBoxFor(model => model.DoctorTitle)</p>
+    
     <input type="submit" value="Add new doctor" class="btn btn-primary" />
 }
 

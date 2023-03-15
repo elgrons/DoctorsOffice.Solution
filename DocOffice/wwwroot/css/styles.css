@@ -6,11 +6,14 @@ div#footer {
   color:#CCC;
   background:#333;
   padding:8px;
-};
+}
 
 body {
-  background: linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)), url(https://twin-cities.umn.edu/sites/twin-cities.umn.edu/files/styles/mobile/public/Hospital%20Room.png?itok=89YtVWl0) no-repeat center fixed;
+  background: linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)), url("./../Images/hospitalroom.png"), center no-repeat fixed;
+  /* position: center;
+  background-repeat: no-repeat; */
   background-size: cover;
+  /* background-attachment: fixed; */
   color:rgb(0, 0, 0)000;
   margin: 20px;
   padding: 10px;
