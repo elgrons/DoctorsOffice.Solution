@@ -16,4 +16,9 @@
 
     <input type="submit" value="Add new patient"/>
 }
+
+<p>@Html.ValidationMessageFor(model => model.PatientId, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+
+<p>@Html.ValidationMessageFor(model => model.PatientName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+
 <p>@Html.ActionLink("Show all patients", "Index")</p>

@@ -9,5 +9,23 @@ div#footer {
 };
 
 body {
-  background: ;
+  background: linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)), url(https://twin-cities.umn.edu/sites/twin-cities.umn.edu/files/styles/mobile/public/Hospital%20Room.png?itok=89YtVWl0) no-repeat center fixed;
+  background-size: cover;
+  color:rgb(0, 0, 0)000;
+  margin: 20px;
+  padding: 10px;
+}
+
+a:link {
+  color:#CCC;
+}
+
+a:visited {
+  color: grey;
+  text-decoration: none;
+}
+
+a:hover {
+  color: hotpink;
+  text-decoration: none;
 }
